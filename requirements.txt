@@ -1,0 +1,28 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.6
+python-multipart>=0.0.9
+pydantic>=2.9.2
+pydantic-settings>=2.5.2
+opencv-python-headless>=4.10.0.84
+Pillow>=10.4.0
+numpy>=1.26.4
+easyocr>=1.7.2
+langdetect>=1.0.9
+transformers>=4.44.2
+# Pinned explicitly: transformers>=5.x requires safetensors>=0.8.0 and
+# huggingface-hub requires click>=8.4.2. If you also install kraken (see
+# requirements-kraken.txt), its own pins (safetensors~=0.7.0, click<8.3)
+# will conflict with these — that conflict is safe to ignore in practice
+# (verified: both packages import and run fine with the newer versions
+# here), but pip will downgrade these two on a plain `pip install kraken`
+# unless they're pinned like this.
+safetensors>=0.8.0
+click>=8.4.2
+sentencepiece>=0.2.0
+torch>=2.5.0
+sacremoses>=0.1.1
+python-dotenv>=1.0.1
+pytest>=8.3.3
+httpx>=0.27.2
+streamlit>=1.38.0
+requests>=2.32.0

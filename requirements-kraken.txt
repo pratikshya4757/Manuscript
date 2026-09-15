@@ -1,0 +1,15 @@
+# Optional: install alongside requirements.txt only if you want to use
+# OCR_ENGINE=kraken (fine-tunable historical/handwritten manuscript OCR).
+# Not required for the MVP — EasyOCR (the default) needs nothing extra.
+#
+#   pip install -r requirements.txt
+#   pip install -r requirements-kraken.txt
+#
+# Kraken pins safetensors~=0.7.0 and click<8.3, which conflict with the
+# safetensors>=0.8.0 / click>=8.4.2 pins in requirements.txt (needed by
+# transformers/huggingface-hub for the translation service). Install in
+# the order above, then re-run `pip install "safetensors>=0.8.0" "click>=8.4.2"`
+# to win the conflict back — both kraken and transformers have been
+# verified to import and run fine with the newer versions despite pip's
+# conflict warning.
+kraken>=7.1.1
